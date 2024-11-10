@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{1256718A-6DFC-4D4A-8CE0-E6F31932C4A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminConsole", "AdminConsole\AdminConsole.csproj", "{257E06AC-AF88-4CC2-AA7C-EB7A1843557E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DF626495-AF1D-4AF5-A79F-2AEC84A332CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Test", "tests\Application.Test\Application.Test.csproj", "{4CF3DD18-F5C0-4AFB-BA37-3BD6AC3E0CE0}"
@@ -21,10 +19,6 @@ Global
 		{1256718A-6DFC-4D4A-8CE0-E6F31932C4A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1256718A-6DFC-4D4A-8CE0-E6F31932C4A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1256718A-6DFC-4D4A-8CE0-E6F31932C4A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{257E06AC-AF88-4CC2-AA7C-EB7A1843557E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{257E06AC-AF88-4CC2-AA7C-EB7A1843557E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{257E06AC-AF88-4CC2-AA7C-EB7A1843557E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{257E06AC-AF88-4CC2-AA7C-EB7A1843557E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4CF3DD18-F5C0-4AFB-BA37-3BD6AC3E0CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4CF3DD18-F5C0-4AFB-BA37-3BD6AC3E0CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CF3DD18-F5C0-4AFB-BA37-3BD6AC3E0CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -8,5 +8,5 @@ public sealed class ShortUrl : IEntity<string>
 
     public required string OriginalUrl { get; set; }
 
-    public required DateTime Timestamp { get; set; }
+    public required DateTime Created { get; set; }
 }

@@ -3,7 +3,6 @@ namespace Application.Repositories;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 public class VolatileRepository<T, TKey> : IRepository<T?, TKey> where T : IEntity<TKey>

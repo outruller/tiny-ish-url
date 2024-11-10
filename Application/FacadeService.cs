@@ -19,7 +19,7 @@ public class FacadeService(
 
   public async Task<string> Create(string originalUrl, string? alias = null)
   {
-    return await _shortUrlService.Create(originalUrl);
+    return await _shortUrlService.Create(originalUrl, alias);
   }
 
   public async Task<bool> Delete(string shortUrl)
@@ -27,8 +27,8 @@ public class FacadeService(
     return await _shortUrlService.Delete(shortUrl);
   }
 
-  public async Task<int> Analytics(string shortUrl)
+  public int Analytics(string shortUrl)
   {
-    return await _analyticsService.Count(shortUrl);
+    return _analyticsService.Count(shortUrl);
   }
 }

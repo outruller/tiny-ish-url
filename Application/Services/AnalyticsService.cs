@@ -4,36 +4,19 @@ using Application.Model;
 using Application.Repositories;
 
 public class AnalyticsService(
-  AnalyticsRepository _analyticsRepository
+  IAnalyticsEventStore _analyticsEventStore
 )
 {
-  public async Task<int> Count(string key)
-  {
-    var entity = await _analyticsRepository.GetByIdAsync(key);
-    if (entity != null)
-      return entity.HitCount;
-    return 0;
-  }
+  public int Count(string key) => _analyticsEventStore.GetEvents(key)
+    .Where(e => e.EventType == AnalyticsEventType.CLICK)
+    .Count();
 
-  public async void Hit(string key)
+  public void Hit(string key)
   {
-    var entity = await _analyticsRepository.GetByIdAsync(key);
-      if (entity != null) {
-        entity.HitCount += 1;
-        await _analyticsRepository.UpdateAsync(entity);
-      } else {
-        entity = new Analytics { Id = key, HitCount = 1};
-        await _analyticsRepository.AddAsync(entity);
-      }
-    // Task.Factory.StartNew(async () => {
-    //   var entity = await _analyticsRepository.GetByIdAsync(key);
-    //   if (entity != null) {
-    //     entity.HitCount += 1;
-    //     await _analyticsRepository.UpdateAsync(entity);
-    //   } else {
-    //     entity = new Analytics { Id = key, HitCount = 1};
-    //     await _analyticsRepository.AddAsync(entity);
-    //   }
-    // });
+    // Fire and forget for analytics
+    Task.Factory.StartNew(() =>
+    {
+      _analyticsEventStore.AppendEvent(key, new ClickEvent());
+    });
   }
 }
